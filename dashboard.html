@@ -412,22 +412,20 @@
 
                                     <div class="header">
 
-
+                                        <div style="float:right;"><button title="See Live Data" class="btn btn-info btn-fill btn-wd">Live Stream</button></div>
+                                        <div style="float:left;"><input placeholder="Select Date Range" class="form-control border-input" type="text" name="datefilter" value="" /></div>
+                                        
                                     </div>
-                                    <div style="float:right;"><button class="btn btn-info btn-fill btn-wd">Live Stream</button></div>
-                                    <div style="float:left;"><label>History Data:</label><input class="form-control border-input" type="text" name="datefilter" value="" /></div>
-
+                                    
                                     <div class="content">
-                                        <div id="chartHours" class="ct-chart">
+                                      
+                                        <div id="chartHours" style="min-width: 310px; height: 400px; margin: 0 auto" class="ct-chart">
 
                                         </div>
+                                       
                                         <div class="footer">
-                                            <!--<div class="chart-legend">
-                                                <i class="fa fa-circle text-info"></i> Open
-                                                <i class="fa fa-circle text-danger"></i> Click
-                                                <i class="fa fa-circle text-warning"></i> Click Second Time
-                                            </div>-->
-                                            <hr>
+                                           
+                                           
                                             <div class="stats">
                                                 <i class="ti-reload"></i> Updated 3 minutes ago
                                             </div>
@@ -448,10 +446,33 @@
 
                                     </div>
                                     <hr />
-                                    <div class="content">
-                                        <div id="chartHours" class="ct-chart">
-                                        </div>
-                                    </div>
+                                   <div class="content">
+                                       <table width="100%">
+                                           <tbody>
+                                               <tr>
+                                                   <td width="40%"><strong>Activated On:</strong> </td>
+                                                   <td width="60%">11 Jan 2018 20:47:45 IST</td>
+                                               </tr>
+                                               <tr>
+                                                   <td width="40%"><strong>Installed On:</strong> </td>
+                                                   <td width="60%">11 Jan 2018 20:47:45 IST</td>
+                                               </tr>
+                                               <tr>
+                                                   <td><strong>Current Sensor Status: </strong></td>
+                                                   <td>Normal</td>
+                                               </tr>
+                                               <tr>
+                                                   <td><strong>Current Sensor Mode: </strong></td>
+                                                   <td>Test mode</td>
+                                               </tr>
+                                         
+                                               <tr>
+                                                   <td><strong>Battery Collection Freq: </strong></td>
+                                                   <td>1.00 Day(s)</td>
+                                               </tr>
+                                           </tbody>
+                                       </table>
+                                   </div>
 
 
                                 </div>
@@ -483,15 +504,20 @@
 <script src="assets/js/demo.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.1/moment.min.js"></script>
-<script type="text/javascript" src="assets/js/daterangepicker.js"></script>
 
+
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script src="assets/code/highcharts.js"></script>
+<script src="assets/code/modules/exporting.js"></script>
+<script src="assets/code/modules/export-data.js"></script>
+<script type="text/javascript" src="assets/js/daterangepicker.js"></script>
+<script type="text/javascript" src="assets/js/Custom-HighChart.js"></script>
 </html>
 <script>
 
     $().ready(function () {
         demo.initGoogleMaps();
     });
-
     $(function () {
 
         $('input[name="datefilter"]').daterangepicker({
@@ -510,12 +536,13 @@
         });
 
     });
+    
 
     function ShowSensorDetail(SensorId, SensorName) {
         $("#Div_Home").hide();
         $("#Div_SensorDetail").show();
         $("#SensorName").html('<i class="ti-arrow-right"></i>' + SensorName);
-        demo.initChartist();
+      //  demo.initChartist();
       //  geocodeLatLng();
     }
 </script>
