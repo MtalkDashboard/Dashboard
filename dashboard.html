@@ -69,6 +69,7 @@
             </div>
         </div>
         <div class="main-panel">
+
             <nav class="navbar navbar-default">
                 <div class="container-fluid">
                     <div class="navbar-header">
@@ -78,7 +79,7 @@
                             <span class="icon-bar bar2"></span>
                             <span class="icon-bar bar3"></span>
                         </button>
-                        <a class="navbar-brand" href="#">Dashboard <label  id="SensorName"></label></a>
+                        <a class="navbar-brand" href="#">Dashboard <label id="SensorName"></label></a>
                     </div>
                     <div class="collapse navbar-collapse">
                         <ul class="nav navbar-nav navbar-right">
@@ -266,6 +267,7 @@
                     </div>
                 </div>
             </div>
+
             <div class="content" id="Div_SensorDetail" style="display:none;">
                 <div class="container-fluid">
                     <div class="row">
@@ -347,7 +349,7 @@
                                         <div class="col-xs-7">
                                             <div class="numbers">
                                                 <p>Total Alerts</p>
-                                               5
+                                                5
                                             </div>
                                         </div>
                                     </div>
@@ -440,17 +442,17 @@
                         <div class="col-md-3">
                             <div class="card card-map">
                                 <div class="header">
-                                 
+
                                     <div class="col-xs-13">
-                                    <p>Sensor Information</p>
-                                                          
+                                        <p>Sensor Information</p>
+
                                     </div>
                                     <hr />
-                                <div class="content">
+                                    <div class="content">
                                         <div id="chartHours" class="ct-chart">
                                         </div>
                                     </div>
-                                  
+
 
                                 </div>
                             </div>
@@ -459,6 +461,7 @@
 
                 </div>
             </div>
+
         </div>
 
 </body>
@@ -482,12 +485,13 @@
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.1/moment.min.js"></script>
 <script type="text/javascript" src="assets/js/daterangepicker.js"></script>
 
+</html>
 <script>
+
     $().ready(function () {
         demo.initGoogleMaps();
     });
-</script>
-<script type="text/javascript">
+
     $(function () {
 
         $('input[name="datefilter"]').daterangepicker({
@@ -506,26 +510,7 @@
         });
 
     });
-</script>
-<script type="text/javascript">
 
-    function geocodeLatLng() {
-       // $("#SensorLocation").html("<Lable>277 Bedford Avenue, Brooklyn, NY 11211, USA<\Lable>");
-        var geocoder = new google.maps.Geocoder;
-       
-        var latlng = { lat: parseFloat(-34.028249), lng: parseFloat(151.157507) };
-        geocoder.geocode({ 'location': latlng }, function (results, status) {
-            if (status === 'OK') {
-                if (results[0]) {
-                    $("#SensorLocation").html("<Lable>277 Bedford Avenue, Brooklyn, NY 11211, USA<\Lable>");
-                } else {
-                    window.alert('No results found');
-                }
-            } else {
-                window.alert('Geocoder failed due to: ' + status);
-            }
-        });
-    }
     function ShowSensorDetail(SensorId, SensorName) {
         $("#Div_Home").hide();
         $("#Div_SensorDetail").show();
@@ -534,4 +519,3 @@
       //  geocodeLatLng();
     }
 </script>
-</html>
